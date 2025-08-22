@@ -1,48 +1,89 @@
-his repository contains a Python-based banking model simulation. The application aims to emulate basic banking operations, providing functionalities such as account creation, deposits, withdrawals, and balance inquiries.
+🔹 What This Program Does
+It simulates a bank management system with both user and admin modes.
 
-Features
-Account Management: Create and manage customer accounts.
+User Features:
+Sign Up (New Account)
+Asks for email, name, DOB, address.
+Generates an Account Number.
+Sends an OTP to your email for verification.
 
-Transactions: Perform deposits and withdrawals.
+After verification:
+Saves details in accounts.txt.
+Creates a personal transaction file (<email>.txt).
+Generates a QR code image containing account details.
+Sends a welcome email with QR code attached.
 
-Balance Inquiry: Check account balances.
+✅ Example Output on console:
 
-Data Persistence: Store account information and transaction history.
+********OTP HAS BEEN SENT ON YOUR EMAIL.*********
+******OTP Verified.********
+************************************************************
+CONGRATULATIONS!! YOUR ACCOUNT HAS BEEN CREATED,
+LOGIN CREDENTIALS HAS BEEN SENT ON YOUR EMAIL.
+************************************************************
 
-Getting Started
-Prerequisites
-Python 3.x installed on your system.
 
-Installation
-Clone the Repository:
+And it generates this QR:
+Login
+Enter Account Number + Password.
+Access menu:
+Deposit money
+Withdraw money
+Show balance
+Send money to another account
+Show mini statement (last 3 transactions)
+Email full statement as PDF attachment
+Change password
+Logout
 
-bash
-Copy
-Edit
-git clone https://github.com/Suchint99/banking-model.git
-cd banking-model
-Run the Application:
+✅ Example Output for Mini Statement:
 
-bash
-Copy
-Edit
-python "WORKING BANK MODEL.py"
-Usage
-Upon running the application, follow the on-screen prompts to:
+Date: 22/08/2025
+Transaction Type: DEPOSIT
+Amount: Rs. 2000
+Particular: BY CASH
+Balance: Rs. 5000
+-----------------------
 
-Create a new account.
 
-Log in to an existing account.
+Reset Password
+Sends OTP to registered email.
+After verification, allows new password.
+Sends confirmation mail.
+Find Account Number
+If you forgot account number, enter Name + Email + Password → it displays your account number.
+Admin Features (Hidden Code 7410)
+If you enter 7410 at main menu, admin panel opens:
+Add User (without OTP, directly create).
+Show All Accounts in a table (using Pandas).
+Delete User by Email.
+Get all accounts data as PDF and send it via email.
 
-Perform transactions like deposits and withdrawals.
+✅ Example Output for Admin “Show All Data”:
 
-Check account balances.
+ S.No.   Name       Email Address       Account Number      Amount  Code
+  1    RAM KUMAR    ram@gmail.com       1234567890          2000    pass123
+  2    SHYAM VERMA  shyam@gmail.com     9876543210          3500    shyam@123
 
-File Structure
-WORKING BANK MODEL.py: Main Python script containing the banking model logic.
+Example of Generated PDF (Account Statement)
 
-Contributing
-Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
+When user requests full statement:
 
-License
-This project is open-source and available under the MIT License.
+The Kartikesh MC Bank
+---------------------------------
+Account Statement
+Name: RAM KUMAR        Updated on: 22/08/2025
+Account Number: 1234567890   Email: ram@gmail.com
+
+Date        Particulars        Amount      Status        Balance
+22/08/2025  BY CASH            Rs. 2000    DEPOSIT       Rs. 5000
+22/08/2025  ATM Withdrawal     Rs. 1000    WITHDRAWAL    Rs. 4000
+
+
+✅ So in short:
+This program is a banking system simulator that:
+Manages users and accounts
+Logs transactions
+Sends OTPs & statements by email
+Generates QR codes & PDF account statements
+Provides an admin panel for managing all users
